@@ -1,0 +1,25 @@
+import java.util.*;
+/**
+ *
+ * @author jennyhuebner
+ */
+public class GuesingGame {
+	public static void main( String[] args ) {
+		int theNumber = 1 + (int)( Math.random() * 100 );
+		int guesses = 0, guess = 0;
+		
+		Scanner in = new Scanner( System.in );
+		System.out.println( "I'm thinking of a number between 1 and 100." );
+		while ( guess != theNumber ) {
+			System.out.print( "Guess my number: " );
+			guess = in.nextInt();
+			guesses++;
+			if ( guess < theNumber )
+				System.out.println( "Go higher." );
+			else if ( guess > theNumber )
+				System.out.println( "Go lower." );
+		}
+		System.out.printf( "You guessed my number in %d tries.\n", guesses );
+	}
+}
+    
